@@ -139,6 +139,8 @@ tradepilot-export-communication-engine/
 
 ## 快速开始 | Quick Start
 
+> 🌐 引擎官网 | Engine Landing Page: [engine.tradepilot.mobi](https://engine.tradepilot.mobi/)
+
 ### 方式一：直接作为提示词使用 | Option 1: Use as a Prompt Directly
 
 1. 复制 `core/core_engine_prompt.md` 的全部内容 | Copy the content of `core/core_engine_prompt.md`
