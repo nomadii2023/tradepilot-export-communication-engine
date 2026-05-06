@@ -45,7 +45,7 @@ Customer says: "Your price is too high."
 Engine: Identifies price objection → warns not to lower immediately → generates generic price negotiation reply
 ```
 
-### 行业包模式（付费）| Industry Pack Mode (Premium)
+### 行业包模式（开源参考包已发布 🆕）| Industry Pack Mode (open-source reference now available 🆕)
 
 ```
 客户说："Your pump price is too high."
@@ -125,8 +125,9 @@ tradepilot-export-communication-engine/
 │   ├── complaint_handling_example.md  ← 引擎如何处理投诉
 │   └── inquiry_reply_example.md      ← 引擎如何处理模糊询盘
 │
-├── premium/                            ← 付费内容 | Premium (paid) content
-│   └── README.md                      ← 付费产品目录 | What's available as premium
+├── premium/                            ← 付费与开源 Pack | Premium & Open-Source Packs
+│   ├── README.md                      ← 付费产品目录 | Premium catalog
+│   └── water_pump_industry_pack.md   ← 🆕 水泵行业包（开源参考实现）| Water Pump Industry Pack (open-source reference)
 │
 └── docs/                               ← 文档 | Documentation
     ├── overview.md                    ← 系统工作原理 | How the system works
@@ -138,6 +139,11 @@ tradepilot-export-communication-engine/
 ---
 
 ## 快速开始 | Quick Start
+
+### 方式四：Hermes Agent Skill（推荐 🆕）| Option 4: Hermes Agent Skill (Recommended 🆕)
+
+核心引擎 + 水泵行业包已集成为 Hermes Agent 的 `tradepilot-export-communication-engine` 技能。加载后自动检测通用模式/行业包模式/公司包模式，在 Telegram/飞书/终端中直接使用。
+Core engine + Water Pump Industry Pack are integrated as a Hermes Agent skill (`tradepilot-export-communication-engine`). Load once and use across Telegram, Feishu, or terminal — automatic mode detection.
 
 ### 方式一：直接作为提示词使用 | Option 1: Use as a Prompt Directly
 
@@ -214,17 +220,24 @@ A `general_trading_demo_pack.md` is included in `demo_packs/` as a reference. It
 
 ---
 
-## 可用付费 Pack | Available Premium Packs
+## 可用付费 Pack | Available Packs
 
-以下付费 Pack 可供选购：
-The following premium packs are available:
+> **🆕 v2.1.0 更新：水泵行业包已开源！** 作为完整参考实现发布在 `premium/water_pump_industry_pack.md`。可直接加载使用，或作为构建其他行业包的参考模板。
+> **🆕 v2.1.0 Update: Water Pump Industry Pack is now open-source!** Published at `premium/water_pump_industry_pack.md` as a complete reference implementation. Ready to use or reference for building other industry packs.
 
-- 水泵行业沟通包 Water Pump Industry Communication Pack
-- 柴油发电机组行业沟通包 Diesel Generator Industry Communication Pack
-- 定制行业包（任意产品品类）Custom Industry Pack (any product category)
-- 公司/产品沟通包（为你的业务定制）Company/Product Communication Pack (customized for your business)
-- 客户案例包（基于真实客户互动）Customer Case Pack (from your real customer interactions)
-- 团队培训版（含校准与支持）Team Training Version (with calibration and support)
+以下 Pack 可供使用或选购：
+The following packs are available:
+
+| Pack 包 | 类型 Type | 获取方式 Access |
+|---------|----------|---------------|
+| **水泵行业沟通包 Water Pump Industry Pack** | 行业包 Industry | 📖 **开源 Open-Source** — `premium/water_pump_industry_pack.md` |
+| 柴油发电机组行业沟通包 Diesel Generator Industry Pack | 行业包 Industry | 付费 Premium |
+| 定制行业包 Custom Industry Pack（任意品类 any category）| 行业包 Industry | 付费 Premium |
+| 公司/产品沟通包 Company/Product Communication Pack | 公司包 Company | 付费 Premium |
+| 客户案例包 Customer Case Pack | 案例包 Case | 付费 Premium |
+| 团队培训版 Team Training Version | 全套 Full Suite | 付费 Premium |
+
+> **开源水泵包包含 Open-Source Water Pump Pack includes:** 12 大水泵品类、15 项关键参数（流量/扬程/功率/电压/相数/转速/材质/防护等级/绝缘等级/吸程/效率/介质温度/固体通过粒径）、7 大区域市场差异与电压对照表、8 种常见故障诊断、13 种应用场景映射、经济型 vs 高端配置对比、14 项 Pre-Order 确认清单。
 
 如需购买付费 Pack 和定制服务，访问 [TradePilot.mobi](https://www.tradepilot.mobi/)
 For premium packs and customization services, visit [TradePilot.mobi](https://www.tradepilot.mobi/)
@@ -257,8 +270,9 @@ See `docs/customization-guide.md` for a step-by-step guide on creating your own 
 ## License | 许可证
 
 - **核心引擎与框架 Core Engine and Framework：** MIT License
+- **开源水泵行业包 Water Pump Industry Pack：** CC BY-NC 4.0（署名-非商业使用，`premium/water_pump_industry_pack.md`）
 - **Pack 模板与示例内容 Pack Templates and Demo Content：** CC BY-NC 4.0（非商业用途）
-- **付费 Pack Premium Packs：** 私有商业资产 — 不包含在本仓库中
+- **其他付费 Pack Other Premium Packs：** 私有商业资产 Private commercial assets
 
 详见 [LICENSE](LICENSE)。
 See [LICENSE](LICENSE) for details.

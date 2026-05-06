@@ -28,12 +28,16 @@ Pre-built packs for specific industries:
 
 | Pack | Coverage | Status |
 |------|----------|--------|
-| Water Pump Industry Pack | Deep well pump, submersible pump, sewage pump, solar pump, centrifugal pump, booster pump, irrigation pump | Available |
-| Diesel Generator Industry Pack | Silent generator, open type, rental generator, standby/prime power, industrial genset | Available |
+| **Water Pump Industry Pack** | Deep well pump, submersible pump, sewage pump, solar pump, centrifugal pump, booster pump, irrigation pump | **📖 Open-Source (see `water_pump_industry_pack.md`)** |
+| Diesel Generator Industry Pack | Silent generator, open type, rental generator, standby/prime power, industrial genset | Available (Premium) |
 | Furniture Export Pack | Living room, bedroom, outdoor, office furniture | Coming Soon |
 | Hardware Tools Pack | Hand tools, power tools, garden tools | Coming Soon |
 | Building Materials Pack | Tiles, sanitary ware, lighting, electrical | Coming Soon |
 | Custom Industry Pack | Any product category | On Request |
+
+> **🎉 水泵行业包现已开源！** `water_pump_industry_pack.md` 作为完整参考实现发布在本仓库中，基于 [streampumps.com](https://www.streampumps.com) 产品线和行业知识整理。覆盖 12 大水泵品类、15 项关键参数、7 大区域市场差异、8 种常见故障诊断。可直接加载到 Core Engine 中使用，也可作为构建其他行业包的参考模板。
+>
+> **🎉 Water Pump Industry Pack is now open-source!** `water_pump_industry_pack.md` is published in this repository as a complete reference implementation, built from [streampumps.com](https://www.streampumps.com) product knowledge and industry expertise. Covers 12 pump categories, 15 key parameters, 7 regional market profiles, 8 diagnostic scenarios. Ready to load with the Core Engine, or use as a reference for building other industry packs.
 
 **What's included in an Industry Pack:**
 - Industry product terminology and parameter guide
@@ -141,4 +145,4 @@ Packs can be updated as your products, policies, or markets change.
 
 ---
 
-*Premium packs are private commercial assets and are not included in the open-source repository.*
+*Except for the open-sourced Water Pump Industry Pack (CC BY-NC 4.0), premium packs are private commercial assets. Custom packs are built on request.*
