@@ -1,42 +1,100 @@
-# TradePilot 外贸英文沟通引擎
-# TradePilot Export Communication Engine
+<p align="center">
+  <h1 align="center">TradePilot Export Communication Engine</h1>
+  <p align="center">
+    <strong>开源外贸询盘 AI 沟通引擎</strong><br>
+    <em>Open-Source AI Communication Engine for Foreign Trade Inquiries</em>
+  </p>
+  <p align="center">
+    <a href="https://engine.tradepilot.mobi/">🌐 官网 Landing Page</a> &nbsp;·&nbsp;
+    <a href="https://github.com/nomadii2023/tradepilot-export-communication-engine">⭐ GitHub</a> &nbsp;·&nbsp;
+    <a href="https://www.tradepilot.mobi/">💼 付费服务</a>
+  </p>
+  <p align="center">
+    <b>通用基础版永久免费</b> &nbsp;|&nbsp; <b>行业专业包 + 企业定制包 付费解锁</b>
+  </p>
+</p>
 
-> **开源通用内核，付费行业包与公司定制包。**
-> **Open-source core. Premium industry packs. Custom company communication systems.**
+---
 
-一个专为外贸从业者设计的结构化沟通引擎。基于场景判断、客户意图分析、商业风险识别和沟通策略，帮助外贸团队生成实用、能成交的英文回复。
-A structured communication engine for exporters. It helps foreign trade teams generate practical, deal-closing English replies based on scenario judgment, customer intent analysis, commercial risk awareness, and communication strategy.
+## 项目简介 | About
+
+TradePilot 是面向**外贸业务员、SOHO、工厂外贸部**的 AI 询盘自动解析与邮件回复引擎。封装为标准 Skill，可一键安装到 WorkBuddy / OpenClaw 生态，自动处理海外客户询价邮件：
+
+- 自动拆解询盘需求：产品、数量、目标价、交期、客户意向
+- 通用版生成标准英文回复模板
+- 加载行业包后：自动匹配行业术语、产品参数、专业谈判话术
+- 加载企业定制包：内置自家报价底线、质保条款、成交逻辑
 
 **这不是翻译提示词。这是一个场景驱动的外贸沟通框架。**
 **This is NOT a translation prompt. It is a scenario-driven export communication framework.**
 
 ---
 
-## 它能做什么 | What It Does
+## 核心特性 | Key Features
 
-- 识别常见外贸沟通场景（10 大核心场景）| Identify common foreign trade communication scenarios (10 core scenarios)
-- 分析客户消息背后的真实意图 | Analyze customer real intent behind messages
-- 检测商业沟通风险 | Detect commercial communication risks
-- 生成 WhatsApp 和 Email 双语回复 | Generate WhatsApp and Email replies (dual versions)
-- 建议后续跟进动作 | Suggest next-step follow-up actions
-- 标注应避免的表达 | Flag expressions to avoid
-- 通过**行业包（Industry Pack）**支持行业定制 | Support industry-specific customization through **Industry Packs**
-- 通过**公司包（Company Pack）**支持公司定制 | Support company-specific customization through **Company Packs**
+- **场景驱动** — 覆盖 10 大外贸核心沟通场景（询盘、报价、议价、投诉、合同等）
+- **智能拆解** — 自动识别场景、分析客户真实意图、检测商业风险
+- **双语输出** — 每次生成 WhatsApp + Email 双版本英文回复
+- **7 段式结构** — 场景判断 → 意图分析 → 风险提示 → 沟通策略 → 英文回复 → 后续步骤 → 避坑指南
+- **模块化 Pack 系统** — 通用内核 + 可插拔行业包 + 企业定制包
+- **隐私安全** — 纯本地 + API 双模式，不泄露商业询盘
+- **原生适配** — WorkBuddy / OpenClaw 一键安装，也支持 ChatGPT Custom GPT、Claude 等
+- **持续迭代** — 开源内核永久更新，行业包持续扩充
 
 ---
 
-## 工作原理 | How It Works
+## 🆕 v2.1.0 更新 | What's New
+
+> **水泵行业包现已开源！** 完整的水泵行业沟通知识包作为参考实现发布在 `premium/water_pump_industry_pack.md`。
+>
+> **Water Pump Industry Pack is now open-source!** A complete reference implementation published at `premium/water_pump_industry_pack.md`.
+>
+> **包含内容 | What's Included:**
+> - 12 大水泵品类 · 15 项关键参数 · 7 大区域市场差异与电压对照表
+> - 8 种常见故障诊断 · 13 种应用场景映射 · 经济型 vs 高端配置对比
+> - 14 项 Pre-Order 确认清单 · 12 条水泵行业红线规则
+> - 基于 [streampumps.com](https://www.streampumps.com) 产品线和行业知识整理
+>
+> **Hermes Agent 集成 | Hermes Agent Integration:**
+> 核心引擎 + 水泵行业包已集成为 Hermes Agent 的 `tradepilot-export-communication-engine` 技能，支持自动模式检测（通用模式/行业包模式/公司包模式），在 Telegram/飞书/终端中直接使用。
+>
+> License: CC BY-NC 4.0 (water_pump_industry_pack.md)
+
+---
+
+## 适用人群 | Who It's For
+
+| 角色 | 痛点 | TradePilot 解决方案 |
+|------|------|---------------------|
+| 外贸 SOHO | 一个人包揽全部，询盘回复效率低 | AI 秒级拆解询盘，生成专业英文回复 |
+| 工厂外贸部 | 业务员英语水平参差不齐 | 引擎统一输出标准，降低人为差错 |
+| 跨境业务员 | 每天处理大量询盘，应接不暇 | 自动解析 + 批量回复建议 |
+| 外贸团队管理者 | 团队对外口径不一致 | 企业包统一品牌语气和报价红线 |
+| AI 自动化实践者 | 想落地 AI 邮件处理 | 开源内核可直接集成、二次开发 |
+
+---
+
+## 适用行业 | Industries
+
+覆盖**全外贸品类**，已有深度行业包的领域：
+
+> 水泵 / 柴油发电机组 / 五金制品 / 3C 电子 / 家居用品 / 玩具礼品 / 医疗器械 / 家电 / 建材 / 农业机械 ...
+>
+> 未列出的行业可**定制开发专属行业包**（详见下方付费服务）
+
+---
+
+## 三种运行模式 | Three Operating Modes
 
 引擎根据加载的 Pack 以三种模式运行：
-The engine operates in three modes based on loaded packs:
 
 | 模式 Mode | 说明 Description | 你将得到 What You Get |
 |-----------|-----------------|----------------------|
-| **通用模式 Generic Mode** | 未加载任何 Pack | 通用外贸逻辑，可用但无行业深度 |
-| **行业包模式 Industry Pack Mode** | 加载 Industry Pack | 增强技术准确性、行业术语、专业谈判逻辑 |
-| **公司包模式 Company Pack Mode** | 加载 Company Pack | 全公司适配：真实产品、真实价格、真实政策、品牌语气 |
+| **通用模式 Generic Mode** | 未加载任何 Pack（免费） | 通用外贸逻辑，可用但无行业深度 |
+| **行业包模式 Industry Pack Mode** | 加载 Industry Pack（开源参考包已发布 🆕） | 增强技术准确性、行业术语、专业谈判逻辑 |
+| **公司包模式 Company Pack Mode** | 加载 Company Pack（付费） | 全公司适配：真实产品、真实价格、真实政策、品牌语气 |
 
-### 通用模式（免费 — 本仓库包含）| Generic Mode (Free — included in this repo)
+### 通用模式（免费 — 本仓库包含）
 
 ```
 客户说："Your price is too high."
@@ -53,7 +111,7 @@ Engine: Identifies price objection → warns not to lower immediately → genera
 Engine: Identifies price objection → loads Water Pump Industry Pack → explains motor winding, mechanical seal, sand resistance, continuous-duty design → generates industry-specific reply
 ```
 
-### 公司包模式（付费）| Company Pack Mode (Premium)
+### 公司包模式（付费）
 
 ```
 客户说："Your pump price is too high."
@@ -63,10 +121,7 @@ Engine: Identifies price objection → loads Company Pack → references actual 
 
 ---
 
-## 核心场景 | Core Scenarios
-
-引擎覆盖 10 个外贸核心沟通场景：
-The engine covers 10 essential foreign trade communication scenarios:
+## 10 大核心场景 | Core Scenarios
 
 | # | 场景 Scene | 说明 Description |
 |---|------------|-----------------|
@@ -86,7 +141,6 @@ The engine covers 10 essential foreign trade communication scenarios:
 ## 输出结构 | Output Structure
 
 每条回复遵循固定的 7 段式结构：
-Every reply follows a fixed 7-section structure:
 
 ```
 [1. 场景判断 Scenario Judgment]      — 这是什么场景？
@@ -100,45 +154,49 @@ Every reply follows a fixed 7-section structure:
 
 ---
 
-## 仓库结构 | Repository Structure
+## 免费版 VS 付费版 | Free vs Premium
 
-```
-tradepilot-export-communication-engine/
-│
-├── README.md                          ← 当前文件 | You are here
-├── LICENSE
-│
-├── core/                               ← 核心引擎（框架）| Core Engine (the framework)
-│   ├── core_engine_prompt.md          ← 主提示词 — 以此为基底 | Main prompt — use this as your base
-│   └── output_format.md               ← 输出结构参考 | Output structure reference
-│
-├── schemas/                            ← Pack 模板（定制标准）| Pack Templates (standards for customization)
-│   ├── industry_pack_template.md      ← 如何构建 Industry Pack
-│   ├── company_pack_template.md       ← 如何构建 Company Pack
-│   └── case_pack_template.md         ← 如何构建 Case Pack
-│
-├── demo_packs/                         ← 示例 Pack（浅层，仅作参考）| Demo Packs (shallow, for reference only)
-│   └── general_trading_demo_pack.md  ← 通用贸易示例（非行业专用）
-│
-├── examples/                           ← 使用案例 | Usage Examples
-│   ├── price_objection_example.md     ← 引擎如何处理价格异议
-│   ├── complaint_handling_example.md  ← 引擎如何处理投诉
-│   └── inquiry_reply_example.md      ← 引擎如何处理模糊询盘
-│
-├── premium/                            ← 付费与开源 Pack | Premium & Open-Source Packs
-│   ├── README.md                      ← 付费产品目录 | Premium catalog
-│   └── water_pump_industry_pack.md   ← 🆕 水泵行业包（开源参考实现）| Water Pump Industry Pack (open-source reference)
-│
-└── docs/                               ← 文档 | Documentation
-    ├── overview.md                    ← 系统工作原理 | How the system works
-    ├── pack-system.md                 ← Pack 系统说明 | How the Pack system works
-    ├── customization-guide.md         ← 分步定制指南 | Step-by-step customization guide
-    └── comparison.md                  ← 免费 vs 付费对比 | Free vs Premium comparison
-```
+| 功能 Feature | 免费通用版 Free | 行业专业包 Industry Pack | 企业定制包 Company Pack |
+|-------------|:---:|:---:|:---:|
+| 核心场景判断 Core scenario judgment | ✅ | ✅ | ✅ |
+| 通用英文回复 Generic English replies | ✅ | ✅ | ✅ |
+| WhatsApp / Email 双版本 | ✅ | ✅ | ✅ |
+| 基础风险提示 Basic risk alerts | ✅ | ✅ | ✅ |
+| Pack 系统支持 Pack system support | ✅ | ✅ | ✅ |
+| 行业专业术语 Industry terminology | 仅示例 | **完整** | **完整** |
+| 技术参数指导 Technical parameters | 通用 | **行业专用** | **产品专用** |
+| 售后诊断问题 After-sales diagnostics | 通用 | **产品专用** | **公司专用** |
+| 价格异议逻辑 Price objection logic | 通用 | **配置专用** | **报价红线内** |
+| 认证/标准适配 Certifications | ❌ | ✅ | ✅ |
+| 区域市场差异 Regional differences | ❌ | ✅ | ✅ |
+| 公司优势表达 Company advantages | ❌ | 部分 | **✅ 完全定制** |
+| 付款/质保红线 Payment & warranty red lines | ❌ | ❌ | **✅ 严格内置** |
+| 真实案例研究 Real case studies | ❌ | ❌ | **✅（可选）** |
+| 团队统一沟通口径 Team unified tone | ❌ | ❌ | **✅** |
+| 输出调优/校准 Output calibration | ❌ | ❌ | **✅** |
+
+> **一句话总结：** 免费通用版能做「及格回复」，付费版让 AI 像**资深本行业外贸业务员**一样回复。
+
+---
+
+## 为什么需要行业专业包 | Why You Need Industry Packs
+
+免费通用版只能做「及格回复」，容易显得不专业、丢客户。
+加载对应行业包后，AI 会像**资深本行业外贸业务员**一样回复：
+
+- 懂**行业专业名词** — 不会把流量说成 flow capacity 然后被客户一眼看穿
+- 懂**产品常规参数** — 流量、扬程、功率、电压、材质、防护等级，信手拈来
+- 懂**客户常见砍价套路** — 用铜还是用铝？这个价格含不含运费？OEM 有没有 MOQ？
+- 懂**行业交期、认证、质保常规说法** — CE / RoHS / ISO / SGS，张口就来
+- 懂**区域市场差异** — 中东的电压标准、非洲的物流周期、东南亚的付款习惯
+
+**大幅提升询盘转化率，节省人工整理话术时间。**
 
 ---
 
 ## 快速开始 | Quick Start
+
+> 🌐 引擎官网 | Engine Landing Page: [engine.tradepilot.mobi](https://engine.tradepilot.mobi/)
 
 ### 方式四：Hermes Agent Skill（推荐 🆕）| Option 4: Hermes Agent Skill (Recommended 🆕)
 
@@ -147,31 +205,62 @@ Core engine + Water Pump Industry Pack are integrated as a Hermes Agent skill (`
 
 ### 方式一：直接作为提示词使用 | Option 1: Use as a Prompt Directly
 
-1. 复制 `core/core_engine_prompt.md` 的全部内容 | Copy the content of `core/core_engine_prompt.md`
-2. 粘贴到你的 AI 工具（ChatGPT、Claude、WorkBuddy 等）作为系统提示词或自定义指令 | Paste it into your AI tool as a system prompt or custom instruction
-3. 开始发送客户消息 — 引擎将以通用模式响应 | Start sending customer messages — the engine will respond in Generic Mode
+1. Star 本项目，克隆到本地
+2. 复制 `core/core_engine_prompt.md` 的全部内容
+3. 粘贴到你的 AI 工具（ChatGPT、Claude、WorkBuddy 等）作为系统提示词
+4. 直接粘贴外贸询价邮件，即可自动解析并生成回复
 
 ### 方式二：配合 WorkBuddy Skill 使用 | Option 2: Use with WorkBuddy Skill
 
 如果你使用 [WorkBuddy](https://www.codebuddy.cn)，核心引擎已作为 Skill 提供。它会自动检测已加载的 Pack 并切换模式。
-If you use [WorkBuddy](https://www.codebuddy.cn), the core engine is available as a skill. It will automatically detect loaded packs and switch modes.
 
 ### 方式三：构建 Custom GPT | Option 3: Build a Custom GPT
 
-以 `core/core_engine_prompt.md` 作为 Custom GPT 的基础指令，然后将你的 Industry Pack 和 Company Pack 内容添加到 Knowledge 区域。
-Use `core/core_engine_prompt.md` as the base instruction for a Custom GPT. Then add your Industry Pack and Company Pack content to the Knowledge section.
+以 `core/core_engine_prompt.md` 作为 Custom GPT 的基础指令，然后将 Industry Pack 和 Company Pack 内容添加到 Knowledge 区域。
+
+---
+
+## 仓库结构 | Repository Structure
+
+```
+tradepilot-export-communication-engine/
+│
+├── README.md                          ← 当前文件 | You are here
+├── LICENSE
+│
+├── core/                               ← 核心引擎（框架）| Core Engine
+│   ├── core_engine_prompt.md          ← 主提示词 — 以此为基底 | Main prompt
+│   └── output_format.md               ← 输出结构参考 | Output structure reference
+│
+├── schemas/                            ← Pack 模板（定制标准）| Pack Templates
+│   ├── industry_pack_template.md      ← 如何构建 Industry Pack
+│   ├── company_pack_template.md       ← 如何构建 Company Pack
+│   └── case_pack_template.md         ← 如何构建 Case Pack
+│
+├── demo_packs/                         ← 示例 Pack（浅层参考）| Demo Packs
+│   └── general_trading_demo_pack.md  ← 通用贸易示例
+│
+├── examples/                           ← 使用案例 | Usage Examples
+│   ├── price_objection_example.md     ← 价格异议处理示例
+│   ├── complaint_handling_example.md  ← 投诉处理示例
+│   └── inquiry_reply_example.md      ← 模糊询盘回复示例
+│
+├── premium/                            ← 付费与开源 Pack | Premium & Open-Source Packs
+│   ├── README.md                      ← 付费产品目录 | Premium catalog
+│   └── water_pump_industry_pack.md   ← 🆕 水泵行业包（开源参考实现）| Water Pump Industry Pack (open-source reference)
+│
+└── docs/                               ← 文档 | Documentation
+    ├── overview.md                    ← 系统工作原理
+    ├── pack-system.md                 ← Pack 系统说明
+    ├── customization-guide.md         ← 分步定制指南
+    └── comparison.md                  ← 免费 vs 付费对比
+```
 
 ---
 
 ## Pack 系统 | Pack System
 
 核心引擎是通用的。它的真正力量来自 Pack。
-The core engine is generic. Its real power comes from Packs.
-
-### 什么是 Pack？| What is a Pack?
-
-Pack 是一个结构化知识文件，用行业专用或公司专用的沟通智能扩展核心引擎。
-A Pack is a structured knowledge file that extends the core engine with industry-specific or company-specific communication intelligence.
 
 ### Pack 类型 | Types of Packs
 
@@ -184,49 +273,18 @@ A Pack is a structured knowledge file that extends the core engine with industry
 ### 如何创建 Pack | How to Create a Pack
 
 使用 `schemas/` 中的模板：
-Use the templates in `schemas/`:
-- `industry_pack_template.md` — 按照此模板构建 Industry Pack
-- `company_pack_template.md` — 按照此模板构建 Company Pack
-- `case_pack_template.md` — 按照此模板构建 Case Pack
 
-### 示例 Pack | Demo Pack
-
-`demo_packs/` 中包含 `general_trading_demo_pack.md` 作为参考。它展示了结构，但有意缺乏行业深度。
-A `general_trading_demo_pack.md` is included in `demo_packs/` as a reference. It shows the structure but intentionally lacks industry depth.
+1. 复制 `schemas/industry_pack_template.md`
+2. 填写你所在行业的产品术语、关键参数、价格异议因素
+3. 与 `core/core_engine_prompt.md` 组合使用
+4. 引擎将自动切换至行业包模式
 
 ---
 
-## 免费 vs 付费 | Free vs Premium
-
-| 功能 Feature | 免费（本仓库）Free (This Repo) | 付费（需购买）Premium (Paid) |
-|-------------|-------------------------------|-------------------------------|
-| 核心场景判断 Core scenario judgment | ✅ | ✅ |
-| 通用英文回复 Generic English replies | ✅ | ✅ |
-| WhatsApp / Email 双版本 | ✅ | ✅ |
-| 基础风险提示 Basic risk alerts | ✅ | ✅ |
-| Pack 系统支持 Pack system support | ✅ | ✅ |
-| 行业专业术语 Industry-specific terminology | 仅示例 Demo only | 完整 Full |
-| 技术参数指导 Technical parameter guidance | 通用 Generic | 行业专用 Industry-specific |
-| 售后诊断问题 After-sales diagnostic questions | 通用 Generic | 产品专用 Product-specific |
-| 价格异议逻辑 Price objection logic | 通用 Generic | 配置专用 Configuration-specific |
-| 公司优势表达 Company advantage expression | ❌ | ✅ |
-| 付款/质保红线 Payment/warranty red lines | ❌ | ✅ |
-| 真实案例研究 Real case studies | ❌ | ✅ |
-| 团队统一沟通 Team unified communication | ❌ | ✅ |
-| 输出调优/校准 Output tuning / calibration | ❌ | ✅ |
-
-> 公开核心引擎专为通用外贸沟通设计。**实际商业使用需要行业专用和公司专用 Pack。**
-> The public core engine is designed for generic foreign trade communication. **For real business use, industry-specific and company-specific packs are required.**
-
----
-
-## 可用付费 Pack | Available Packs
+## 可用 Pack | Available Packs
 
 > **🆕 v2.1.0 更新：水泵行业包已开源！** 作为完整参考实现发布在 `premium/water_pump_industry_pack.md`。可直接加载使用，或作为构建其他行业包的参考模板。
-> **🆕 v2.1.0 Update: Water Pump Industry Pack is now open-source!** Published at `premium/water_pump_industry_pack.md` as a complete reference implementation. Ready to use or reference for building other industry packs.
-
-以下 Pack 可供使用或选购：
-The following packs are available:
+> **🆕 v2.1.0 Update: Water Pump Industry Pack is now open-source!** Published at `premium/water_pump_industry_pack.md` as a complete reference implementation.
 
 | Pack 包 | 类型 Type | 获取方式 Access |
 |---------|----------|---------------|
@@ -239,55 +297,47 @@ The following packs are available:
 
 > **开源水泵包包含 Open-Source Water Pump Pack includes:** 12 大水泵品类、15 项关键参数（流量/扬程/功率/电压/相数/转速/材质/防护等级/绝缘等级/吸程/效率/介质温度/固体通过粒径）、7 大区域市场差异与电压对照表、8 种常见故障诊断、13 种应用场景映射、经济型 vs 高端配置对比、14 项 Pre-Order 确认清单。
 
-如需购买付费 Pack 和定制服务，访问 [TradePilot.mobi](https://www.tradepilot.mobi/)
-For premium packs and customization services, visit [TradePilot.mobi](https://www.tradepilot.mobi/)
+---
+
+## 付费服务 & 获取方式 | Premium Services
+
+> 💼 **在售：** 各行业专业包、全行业年度会员、企业私有化定制部署
+>
+> 如需购买付费 Pack 和定制服务，访问 [TradePilot.mobi](https://www.tradepilot.mobi/)
+> For premium packs and customization services, visit [TradePilot.mobi](https://www.tradepilot.mobi/)
+
+### 付费包定价逻辑
+
+- **行业专业包** — 按单个行业授权，精准适配本行业客户询盘
+- **企业定制包** — 一对一专属定制，仅限本企业内部使用
+- **全行业年度会员** — 解锁所有已发布行业包 + 优先获取新包
+- **企业私有化部署** — 完整引擎 + 全套 Pack，本地化部署，数据不出企业
+
+> 详细报价请添加微信或访问官网咨询。
 
 ---
 
-## 如何定制 | How to Customize
+## 开源声明 | Open Source License
 
-详见 `docs/customization-guide.md` 获取创建自定义 Pack 的分步指南。
-See `docs/customization-guide.md` for a step-by-step guide on creating your own packs.
-
-### 快速路径 | Quick Path
-
-1. 复制 `schemas/industry_pack_template.md` | Copy `schemas/industry_pack_template.md`
-2. 填写你所在行业的产品术语、关键参数、价格异议因素 | Fill in your industry's product terminology, key parameters, price objection factors
-3. 与 `core/core_engine_prompt.md` 组合使用 | Combine with `core/core_engine_prompt.md`
-4. 开始使用 — 引擎将自动切换至行业包模式 | Start using — the engine will automatically switch to Industry Pack Mode
-
-### 完整路径 | Full Path
-
-1. 创建 Industry Pack（根据模板）| Create Industry Pack (from template)
-2. 创建 Company Pack（根据模板）| Create Company Pack (from template)
-3. 根据真实客户互动创建 Case Pack（根据模板）| Create Case Pack from real customer interactions (from template)
-4. 将所有 Pack 与核心引擎一起加载 | Load all packs with the Core Engine
-5. 用团队真实客户消息测试 | Test with your team's real customer messages
-6. 迭代改进 | Iterate and improve
-
----
-
-## License | 许可证
-
-- **核心引擎与框架 Core Engine and Framework：** MIT License
-- **开源水泵行业包 Water Pump Industry Pack：** CC BY-NC 4.0（署名-非商业使用，`premium/water_pump_industry_pack.md`）
-- **Pack 模板与示例内容 Pack Templates and Demo Content：** CC BY-NC 4.0（非商业用途）
-- **其他付费 Pack Other Premium Packs：** 私有商业资产 Private commercial assets
+| 内容 | 许可证 |
+|------|--------|
+| **核心引擎与框架 Core Engine & Framework** | MIT License — 完全开源，自由使用 |
+| **开源水泵行业包 Water Pump Industry Pack** | CC BY-NC 4.0 — `premium/water_pump_industry_pack.md` |
+| **Pack 模板与示例内容 Pack Templates & Demo Content** | CC BY-NC 4.0 — 非商业用途 |
+| **其他付费 Pack Other Premium Packs** | 私有商业资产 — 禁止二次分发、倒卖、逆向拆解 |
 
 详见 [LICENSE](LICENSE)。
-See [LICENSE](LICENSE) for details.
 
 ---
 
 ## 贡献 | Contributing
 
 这是一个开源框架。欢迎贡献：
-This is an open-source framework. Contributions are welcome:
 
-- 核心引擎的 Bug 修复和改进 | Bug fixes and improvements to the Core Engine
-- 新语言包（西班牙语、法语、阿拉伯语等）| New language packs (Spanish, French, Arabic, etc.)
-- 新示例场景 | New example scenarios
-- 文档改进 | Documentation improvements
+- 核心引擎的 Bug 修复和改进
+- 新语言包（西班牙语、法语、阿拉伯语等）
+- 新示例场景
+- 文档改进
 
 ---
 
@@ -297,11 +347,13 @@ TradePilot 是一个面向外贸企业的 AI 驱动 B2B 客户情报与触达平
 TradePilot is an AI-powered B2B customer intelligence and outreach platform for foreign trade businesses. We combine AI-driven lead discovery, communication intelligence, and sales workflow automation.
 
 - 官网 Website: [TradePilot.mobi](https://www.tradepilot.mobi/)
-- 微信公众号 WeChat Official Account: [外贸AI实战录](https://mp.weixin.qq.com) (Foreign Trade AI in Practice)
+- 引擎页面 Engine: [engine.tradepilot.mobi](https://engine.tradepilot.mobi/)
+- 微信公众号 WeChat: [外贸AI实战录](https://mp.weixin.qq.com)
 
 ---
 
-## 一句话总结 | One-Line Summary
-
-> **TradePilot 外贸英文沟通引擎：开源通用内核，付费行业包与公司定制包。**
-> **TradePilot Export Communication Engine: Open-source core, premium industry packs, custom company communication systems.**
+<p align="center">
+  <b>TradePilot Export Communication Engine</b><br>
+  开源通用内核 · 付费行业包 · 企业定制包<br>
+  <em>Open-source core · Premium industry packs · Custom company communication systems</em>
+</p>

@@ -140,7 +140,7 @@ Packs can be updated as your products, policies, or markets change.
 
 ## Contact
 
-- Website: [TradePilot.mobi](https://tradepilot.mobi)
+- Website: [TradePilot.mobi](https://www.tradepilot.mobi/)
 - WeChat: [外贸AI实战录](https://mp.weixin.qq.com)
 
 ---
