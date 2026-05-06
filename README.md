@@ -275,9 +275,6 @@ This is an open-source framework. Contributions are welcome:
 - 新示例场景 | New example scenarios
 - 文档改进 | Documentation improvements
 
-注意：具有真实商业价值的 Industry Pack 和 Company Pack **不应**作为 Pull Request 提交 — 它们是付费资产。
-Please note: Industry Packs and Company Packs with real commercial value should NOT be submitted as pull requests — they are premium assets.
-
 ---
 
 ## 关于 TradePilot | About TradePilot
