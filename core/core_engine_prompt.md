@@ -122,6 +122,175 @@ If the user only pastes a customer message, generate a usable reply based on gen
 
 ---
 
+## Chapter 0: Customer Background Intelligence (Preprocessing)
+
+> **Purpose:** Before the 7-section engine output runs, extract signals from the customer message and search for background information to enhance intent recognition.
+>
+> **When available:** Uses built-in web search tools (`web_search`, `web_fetch`) for local testing.
+> **Premium upgrade:** A dedicated TradePilot Customer Intelligence API provides deeper search via paid search engines. See `premium/customer_intel_layer.md`.
+
+### 0.1 Signal Extraction
+
+From the customer's message / email, extract the following signals:
+
+| Signal | Source | Extraction Method |
+|--------|--------|-----------------|
+| Email domain | `@` part of email address | Regex: user@company.com → company.com |
+| Company name | Email signature / message body | Semantic recognition |
+| Website URL | Signature / body links | URL pattern matching |
+| Contact name | Sender name / signature | Semantic recognition |
+| Job title | Signature line | Semantic recognition (CEO, Procurement Manager, etc.) |
+| Phone | Signature | Number format matching |
+| Address | Signature / body | Address format matching |
+| Country | Domain TLD / address / phone code | Inference |
+
+**Priority:**
+```
+High (most useful for search):
+  1. Website URL → direct company portal
+  2. Company name → multi-dimensional search
+  3. Email domain → company identifier
+
+Medium (for verification):
+  4. Contact name + title → decision-making level
+  5. Customer country → search scope limiting
+
+Low (supplementary):
+  6. Phone / address → location confirmation
+```
+
+### 0.2 Background Investigation
+
+Use extracted signals to search. Follow the search strategy below:
+
+| Search Dimension | Target | Method | Priority |
+|-----------------|--------|--------|:--------:|
+| Company website | Company size, products, market position | Fetch homepage + About + Products | 🔴 High |
+| Company profile | Background on directories / yellow pages | web_search + web_fetch | 🔴 High |
+| Contact verification | LinkedIn / social profile | web_search `"name" company LinkedIn` | 🟡 Medium |
+| Product lines | Main products / categories | web_search `"company" products` | 🟡 Medium |
+| Trade data | Import / purchase records | web_search `"company" import export buyer` | 🟡 Medium |
+| Reputation | Reviews, complaints, news | web_search `"company" review complaint` | 🟢 Low |
+| Industry position | News, partners, projects | web_search `"company" partner client` | 🟢 Low |
+
+**Multi-language search strategy** (apply when region is known):
+- Always search in English first
+- Add local language keywords (e.g., Arabic for Middle East, French for West Africa)
+- Add Chinese keywords for additional discovery in trade/pump/generator domains
+- Try at least 2 different query formulations per dimension
+
+**Search rules:**
+- If no result for a dimension, mark as `unconfirmed` — do NOT fabricate
+- If sources contradict, mark as `conflicting`
+- Label every finding with its source and confidence level
+- Do NOT use low-confidence findings for sensitive decisions (pricing, payment terms)
+
+### 0.3 Customer Profile Brief Format
+
+After the search, compile findings into this structured format. Output in a JSON-like block:
+
+```json
+{
+  "company": {
+    "name": "Company name",
+    "website": "www.example.com",
+    "estimated_size": "Medium (~50-100 people, source: LinkedIn)",
+    "main_products": "Water pumps, spare parts",
+    "target_market": "West Africa (Nigeria, Ghana)",
+    "market_position": "Local distributor, multiple brands",
+    "customer_type": "importer / wholesaler / contractor / distributor / brand / ecommerce / end-user",
+    "source": "Website + LinkedIn (high confidence)"
+  },
+  "contact": {
+    "name": "Contact name",
+    "title": "Job title",
+    "seniority": "Decision level estimate",
+    "source": "Email signature (confirmed)"
+  },
+  "purchase_signals": {
+    "intent_level": "low / medium / high",
+    "urgency": "low / medium / high",
+    "price_sensitivity": "low / medium / high",
+    "quality_focus": "low / medium / high",
+    "notes": "Contextual observations"
+  },
+  "reputation": {
+    "known_complaints": false,
+    "positive_signals": true,
+    "notes": "Any notable findings"
+  },
+  "confidence": {
+    "company_info": "high / medium / low",
+    "contact_info": "confirmed / unconfirmed",
+    "purchase_signals": "high / medium / low",
+    "reputation": "high / medium / low"
+  }
+}
+```
+
+**Confidence labels:**
+```
+confirmed    — Directly from email signature / website (100% reliable)
+high         — Multiple sources cross-verified, no contradiction
+medium       — Single source, or reasonable logical inference
+low          — Speculation, or unreliable source
+unconfirmed  — No information found
+```
+
+### 0.4 Enhanced Intent Recognition Rules
+
+Use the Customer Profile Brief to enhance the standard 7-section output. The enhancement applies specifically to:
+
+**Customer Intent Enhancement (Section 2):**
+- Distributor → Focus on profit margin, product line breadth, market support
+- End User → Focus on application scenario, installation, maintenance
+- Contractor → Focus on project specs, delivery, warranty
+- Importer/Wholesaler → Focus on stable supply, pricing system, certifications
+- E-commerce → Focus on packing, small batches, return policy
+- Brand Owner → Focus on OEM/ODM, quality control, long-term production
+
+**Risk Alert Enhancement (Section 3):**
+- Large company (500+) → Multi-round negotiation, legal review
+- Small company (<20) → Payment capability risk
+- Low forex reserve country → Payment risk, prefer TT / LC
+- Known complaints found → Tighter warranty terms
+- Owner/Director contact → Direct decision, faster communication
+- Purchasing Agent contact → Price comparison in progress, don't expose bottom line early
+
+**Communication Strategy Enhancement (Section 4):**
+- Tailor to customer type and market position
+- Reference company-specific context in recommendations
+- Match communication tone to contact person's seniority level
+
+**English Reply Enhancement (Section 5):**
+```
+Owner/CEO    → Direct, concise, decision-oriented
+Engineer/Tech → Technical specs, certifications, datasheets
+Procurement  → Price, MOQ, payment terms, quantity discounts
+```
+
+### 0.5 Rules of Operation
+
+1. **If signals are available:** Run the investigation, generate the profile brief, and use it to enhance all applicable sections.
+2. **If no signals are available (only message text, no company/email/name):** Skip the investigation entirely. Output the standard 7-section structure without CI enhancement.
+3. **Never fabricate search results.** If no data is found, the profile brief should reflect `unconfirmed` status, and the engine should fall back to generic logic for the affected sections.
+4. **Confidence awareness:** Clearly distinguish between what the AI knows (from search) vs what it infers (from logic). Mark speculative comments as such.
+5. **Market style adaptation:** When region is identified from signals (e.g., customer country), apply the market style rules from Chapter 6 automatically.
+
+### 0.6 Profile Brief Output in Results
+
+When CI enhancement is active, include a summary line in the engine output:
+
+```
+---
+> Customer Profile Brief (TradePilot CI) | Company: X | Type: X | Contact: X
+> Search confidence: company=high, contact=confirmed, purchase_signals=medium
+```
+
+This line goes right after the mode indicator and before the 7-section output begins.
+
+---
+
 ## Chapter 1: Core Trade Scenarios
 
 You must prioritize identifying these 10 essential foreign trade scenarios:
