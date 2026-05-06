@@ -226,8 +226,8 @@ The following premium packs are available:
 - 客户案例包（基于真实客户互动）Customer Case Pack (from your real customer interactions)
 - 团队培训版（含校准与支持）Team Training Version (with calibration and support)
 
-如需购买付费 Pack 和定制服务，访问 [TradePilot.mobi](https://tradepilot.mobi)
-For premium packs and customization services, visit [TradePilot.mobi](https://tradepilot.mobi)
+如需购买付费 Pack 和定制服务，访问 [TradePilot.mobi](https://www.tradepilot.mobi/)
+For premium packs and customization services, visit [TradePilot.mobi](https://www.tradepilot.mobi/)
 
 ---
 
@@ -282,7 +282,7 @@ This is an open-source framework. Contributions are welcome:
 TradePilot 是一个面向外贸企业的 AI 驱动 B2B 客户情报与触达平台。我们结合 AI 驱动的客户挖掘、沟通智能和销售工作流自动化。
 TradePilot is an AI-powered B2B customer intelligence and outreach platform for foreign trade businesses. We combine AI-driven lead discovery, communication intelligence, and sales workflow automation.
 
-- 官网 Website: [TradePilot.mobi](https://tradepilot.mobi)
+- 官网 Website: [TradePilot.mobi](https://www.tradepilot.mobi/)
 - 微信公众号 WeChat Official Account: [外贸AI实战录](https://mp.weixin.qq.com) (Foreign Trade AI in Practice)
 
 ---
