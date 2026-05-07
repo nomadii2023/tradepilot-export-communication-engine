@@ -179,6 +179,14 @@ Engine: Identifies price objection → loads Company Pack → references actual 
 
 > 🌐 引擎官网 | Engine Landing Page: [engine.tradepilot.mobi](https://engine.tradepilot.mobi/)
 
+### 🆕 方式四：Hermes Agent Skill | Option 4: Hermes Agent Skill (Recommended)
+
+核心引擎 + 水泵行业包已集成为 Hermes Agent 的 `tradepilot-export-communication-engine` 技能。一键加载，自动检测通用模式/行业包模式/公司包模式，在 Telegram、飞书、终端中直接使用。
+
+The core engine + Water Pump Industry Pack are integrated as a Hermes Agent skill. One-click load, automatic mode detection, works across Telegram, Feishu, and terminal.
+
+---
+
 ### 方式一：直接作为提示词使用 | Option 1: Use as a Prompt Directly
 
 1. Star 本项目，克隆到本地
@@ -221,9 +229,10 @@ tradepilot-export-communication-engine/
 │   ├── complaint_handling_example.md  ← 投诉处理示例
 │   └── inquiry_reply_example.md      ← 模糊询盘回复示例
 │
-├── premium/                            ← 付费内容 | Premium content
-│   ├── README.md                      ← 付费产品目录
-│   └── water_pump_industry_pack.md   ← 水泵行业沟通包（示例）
+├── premium/                            ← 免费开源 + 付费内容 | Free Open-Source + Premium Content
+│   ├── README.md                      ← 付费产品目录 | Premium catalog
+│   ├── water_pump_industry_pack.md   ← 🆕 水泵行业沟通包（开源 CC BY-NC 4.0）
+│   └── customer_intel_layer.md       ← 🆕 客户背景情报层（信号提取→搜索→画像→增强）
 │
 └── docs/                               ← 文档 | Documentation
     ├── overview.md                    ← 系统工作原理
@@ -258,11 +267,15 @@ The core engine is generic. Its real power comes from Packs.
 
 ---
 
-## 可用付费 Pack | Available Premium Packs
+## 可用付费 Pack | Available Packs
+
+> **🆕 v2.1.0：水泵行业包已开源！** 作为完整参考实现发布在 `premium/water_pump_industry_pack.md`（CC BY-NC 4.0）。可直接加载到 Core Engine 使用，也可作为构建其他行业包的参考模板。覆盖 12 大水泵品类、15 项关键参数、7 大区域市场差异、8 种常见故障诊断。
+>
+> **🆕 v2.1.0: Water Pump Industry Pack is now open-source!** CC BY-NC 4.0 licensed. Covers 12 pump categories, 15 key parameters, 7 regional market profiles, 8 diagnostic scenarios. Ready to load or reference.
 
 | Pack 名称 | 说明 | 状态 |
 |-----------|------|------|
-| 水泵行业沟通包 Water Pump Industry Pack | 12 类水泵、15+ 技术参数、区域电压标准、售后诊断流程 | ✅ 已发布 |
+| 水泵行业沟通包 Water Pump Industry Pack | 12 类水泵、15+ 技术参数、区域电压标准、售后诊断流程 | 📖 **开源** CC BY-NC 4.0 |
 | 柴油发电机组行业沟通包 Diesel Generator Pack | 发电机组专业术语、功率匹配、排放标准、售后体系 | ✅ 已发布 |
 | 定制行业包 Custom Industry Pack | 任意产品品类，按需开发 | 🔄 接受定制 |
 | 公司/产品沟通包 Company Pack | 基于你真实业务的一对一定制 | 🔄 接受定制 |
@@ -298,10 +311,11 @@ The core engine is generic. Its real power comes from Packs.
 | 内容 | 许可证 |
 |------|--------|
 | **核心引擎与框架** Core Engine & Framework | MIT License — 完全开源，自由使用 |
+| **开源水泵行业包** Water Pump Industry Pack | CC BY-NC 4.0 — 署名-非商业使用（`premium/water_pump_industry_pack.md`）|
 | **Pack 模板与示例内容** Pack Templates & Demo Content | CC BY-NC 4.0 — 非商业用途 |
-| **付费 Pack** Premium Packs | 私有商业资产 — 禁止二次分发、倒卖、逆向拆解 |
+| **其他付费 Pack** Other Premium Packs | 私有商业资产 — 禁止二次分发、倒卖、逆向拆解 |
 
-本项目通用内核完全开源，供学习、个人免费使用。行业包、企业定制包为闭源授权产品。
+本项目通用内核完全开源，供学习、个人免费使用。水泵行业包已作为参考实现开源发布。行业包、企业定制包为闭源授权产品。
 
 详见 [LICENSE](LICENSE)。
 
