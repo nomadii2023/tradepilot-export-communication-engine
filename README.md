@@ -6,7 +6,7 @@
   </p>
   <p align="center">
     <a href="https://engine.tradepilot.mobi/">🌐 官网 Landing Page</a> &nbsp;·&nbsp;
-    <a href="https://github.com/nomadii2023/tradepilot-export-communication-engine">⭐ GitHub</a> &nbsp;·&nbsp;
+    <a href="https://github.com/nicetomeetyou/tradepilot-export-communication-engine">⭐ GitHub</a> &nbsp;·&nbsp;
     <a href="https://www.tradepilot.mobi/">💼 付费服务</a>
   </p>
   <p align="center">
@@ -43,25 +43,6 @@ TradePilot 是面向**外贸业务员、SOHO、工厂外贸部**的 AI 询盘自
 
 ---
 
-## 🆕 v2.1.0 更新 | What's New
-
-> **水泵行业包现已开源！** 完整的水泵行业沟通知识包作为参考实现发布在 `premium/water_pump_industry_pack.md`。
->
-> **Water Pump Industry Pack is now open-source!** A complete reference implementation published at `premium/water_pump_industry_pack.md`.
->
-> **包含内容 | What's Included:**
-> - 12 大水泵品类 · 15 项关键参数 · 7 大区域市场差异与电压对照表
-> - 8 种常见故障诊断 · 13 种应用场景映射 · 经济型 vs 高端配置对比
-> - 14 项 Pre-Order 确认清单 · 12 条水泵行业红线规则
-> - 基于 [streampumps.com](https://www.streampumps.com) 产品线和行业知识整理
->
-> **Hermes Agent 集成 | Hermes Agent Integration:**
-> 核心引擎 + 水泵行业包已集成为 Hermes Agent 的 `tradepilot-export-communication-engine` 技能，支持自动模式检测（通用模式/行业包模式/公司包模式），在 Telegram/飞书/终端中直接使用。
->
-> License: CC BY-NC 4.0 (water_pump_industry_pack.md)
-
----
-
 ## 适用人群 | Who It's For
 
 | 角色 | 痛点 | TradePilot 解决方案 |
@@ -91,7 +72,7 @@ TradePilot 是面向**外贸业务员、SOHO、工厂外贸部**的 AI 询盘自
 | 模式 Mode | 说明 Description | 你将得到 What You Get |
 |-----------|-----------------|----------------------|
 | **通用模式 Generic Mode** | 未加载任何 Pack（免费） | 通用外贸逻辑，可用但无行业深度 |
-| **行业包模式 Industry Pack Mode** | 加载 Industry Pack（开源参考包已发布 🆕） | 增强技术准确性、行业术语、专业谈判逻辑 |
+| **行业包模式 Industry Pack Mode** | 加载 Industry Pack（付费） | 增强技术准确性、行业术语、专业谈判逻辑 |
 | **公司包模式 Company Pack Mode** | 加载 Company Pack（付费） | 全公司适配：真实产品、真实价格、真实政策、品牌语气 |
 
 ### 通用模式（免费 — 本仓库包含）
@@ -103,7 +84,7 @@ Customer says: "Your price is too high."
 Engine: Identifies price objection → warns not to lower immediately → generates generic price negotiation reply
 ```
 
-### 行业包模式（开源参考包已发布 🆕）| Industry Pack Mode (open-source reference now available 🆕)
+### 行业包模式（付费）
 
 ```
 客户说："Your pump price is too high."
@@ -198,11 +179,6 @@ Engine: Identifies price objection → loads Company Pack → references actual 
 
 > 🌐 引擎官网 | Engine Landing Page: [engine.tradepilot.mobi](https://engine.tradepilot.mobi/)
 
-### 方式四：Hermes Agent Skill（推荐 🆕）| Option 4: Hermes Agent Skill (Recommended 🆕)
-
-核心引擎 + 水泵行业包已集成为 Hermes Agent 的 `tradepilot-export-communication-engine` 技能。加载后自动检测通用模式/行业包模式/公司包模式，在 Telegram/飞书/终端中直接使用。
-Core engine + Water Pump Industry Pack are integrated as a Hermes Agent skill (`tradepilot-export-communication-engine`). Load once and use across Telegram, Feishu, or terminal — automatic mode detection.
-
 ### 方式一：直接作为提示词使用 | Option 1: Use as a Prompt Directly
 
 1. Star 本项目，克隆到本地
@@ -245,9 +221,9 @@ tradepilot-export-communication-engine/
 │   ├── complaint_handling_example.md  ← 投诉处理示例
 │   └── inquiry_reply_example.md      ← 模糊询盘回复示例
 │
-├── premium/                            ← 付费与开源 Pack | Premium & Open-Source Packs
-│   ├── README.md                      ← 付费产品目录 | Premium catalog
-│   └── water_pump_industry_pack.md   ← 🆕 水泵行业包（开源参考实现）| Water Pump Industry Pack (open-source reference)
+├── premium/                            ← 付费内容 | Premium content
+│   ├── README.md                      ← 付费产品目录
+│   └── water_pump_industry_pack.md   ← 水泵行业沟通包（示例）
 │
 └── docs/                               ← 文档 | Documentation
     ├── overview.md                    ← 系统工作原理
@@ -261,6 +237,7 @@ tradepilot-export-communication-engine/
 ## Pack 系统 | Pack System
 
 核心引擎是通用的。它的真正力量来自 Pack。
+The core engine is generic. Its real power comes from Packs.
 
 ### Pack 类型 | Types of Packs
 
@@ -281,21 +258,16 @@ tradepilot-export-communication-engine/
 
 ---
 
-## 可用 Pack | Available Packs
+## 可用付费 Pack | Available Premium Packs
 
-> **🆕 v2.1.0 更新：水泵行业包已开源！** 作为完整参考实现发布在 `premium/water_pump_industry_pack.md`。可直接加载使用，或作为构建其他行业包的参考模板。
-> **🆕 v2.1.0 Update: Water Pump Industry Pack is now open-source!** Published at `premium/water_pump_industry_pack.md` as a complete reference implementation.
-
-| Pack 包 | 类型 Type | 获取方式 Access |
-|---------|----------|---------------|
-| **水泵行业沟通包 Water Pump Industry Pack** | 行业包 Industry | 📖 **开源 Open-Source** — `premium/water_pump_industry_pack.md` |
-| 柴油发电机组行业沟通包 Diesel Generator Industry Pack | 行业包 Industry | 付费 Premium |
-| 定制行业包 Custom Industry Pack（任意品类 any category）| 行业包 Industry | 付费 Premium |
-| 公司/产品沟通包 Company/Product Communication Pack | 公司包 Company | 付费 Premium |
-| 客户案例包 Customer Case Pack | 案例包 Case | 付费 Premium |
-| 团队培训版 Team Training Version | 全套 Full Suite | 付费 Premium |
-
-> **开源水泵包包含 Open-Source Water Pump Pack includes:** 12 大水泵品类、15 项关键参数（流量/扬程/功率/电压/相数/转速/材质/防护等级/绝缘等级/吸程/效率/介质温度/固体通过粒径）、7 大区域市场差异与电压对照表、8 种常见故障诊断、13 种应用场景映射、经济型 vs 高端配置对比、14 项 Pre-Order 确认清单。
+| Pack 名称 | 说明 | 状态 |
+|-----------|------|------|
+| 水泵行业沟通包 Water Pump Industry Pack | 12 类水泵、15+ 技术参数、区域电压标准、售后诊断流程 | ✅ 已发布 |
+| 柴油发电机组行业沟通包 Diesel Generator Pack | 发电机组专业术语、功率匹配、排放标准、售后体系 | ✅ 已发布 |
+| 定制行业包 Custom Industry Pack | 任意产品品类，按需开发 | 🔄 接受定制 |
+| 公司/产品沟通包 Company Pack | 基于你真实业务的一对一定制 | 🔄 接受定制 |
+| 客户案例包 Case Pack | 20-50 条匿名化真实案例，团队培训专用 | 🔄 接受定制 |
+| 团队培训版 Team Training | 含全套 Pack + 校准 + 培训指导 | 🔄 接受定制 |
 
 ---
 
@@ -303,8 +275,12 @@ tradepilot-export-communication-engine/
 
 > 💼 **在售：** 各行业专业包、全行业年度会员、企业私有化定制部署
 >
-> 如需购买付费 Pack 和定制服务，访问 [TradePilot.mobi](https://www.tradepilot.mobi/)
-> For premium packs and customization services, visit [TradePilot.mobi](https://www.tradepilot.mobi/)
+> 👉 获取行业包目录、演示案例、报价及安装指导
+>
+> 请添加微信：【这里填你微信号】
+> 备注：TradePilot
+>
+> 或访问官网：[TradePilot.mobi](https://www.tradepilot.mobi/)
 
 ### 付费包定价逻辑
 
@@ -321,10 +297,11 @@ tradepilot-export-communication-engine/
 
 | 内容 | 许可证 |
 |------|--------|
-| **核心引擎与框架 Core Engine & Framework** | MIT License — 完全开源，自由使用 |
-| **开源水泵行业包 Water Pump Industry Pack** | CC BY-NC 4.0 — `premium/water_pump_industry_pack.md` |
-| **Pack 模板与示例内容 Pack Templates & Demo Content** | CC BY-NC 4.0 — 非商业用途 |
-| **其他付费 Pack Other Premium Packs** | 私有商业资产 — 禁止二次分发、倒卖、逆向拆解 |
+| **核心引擎与框架** Core Engine & Framework | MIT License — 完全开源，自由使用 |
+| **Pack 模板与示例内容** Pack Templates & Demo Content | CC BY-NC 4.0 — 非商业用途 |
+| **付费 Pack** Premium Packs | 私有商业资产 — 禁止二次分发、倒卖、逆向拆解 |
+
+本项目通用内核完全开源，供学习、个人免费使用。行业包、企业定制包为闭源授权产品。
 
 详见 [LICENSE](LICENSE)。
 
